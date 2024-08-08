@@ -18,7 +18,7 @@ export default function GameComponents(){
     return (
       <> 
       <PlayingTo resetCounter = {resetCounter} onChangeValue={changePlayingto}/>
-      <div className="flex mt-5 justify-center items-center gap-x-36">
+      <div className="flex mt-5 justify-center items-center gap-x-20">
         <PlayerContainer wonReset = {handleReset} playingTo={playingTo} resetCounter={resetCounter}/>
         <PlayerContainer wonReset = {handleReset} playingTo={playingTo} resetCounter={resetCounter} />
       </div>
