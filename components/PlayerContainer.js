@@ -44,7 +44,7 @@ export default function PlayerContainer({ resetCounter, playingTo, wonReset }) {
   }
 
   return (
-    <div className="h-80 w-80 bg-amber-200 rounded-md flex flex-col items-center">
+    <div className="h-3/4 w-auto bg-amber-200 rounded-md flex flex-col items-center">
     <input
       type="text"
       value = {name}
@@ -54,7 +54,7 @@ export default function PlayerContainer({ resetCounter, playingTo, wonReset }) {
 
     />
     <button
-      className="w-40 h-40 mt-6 bg-white flex rounded-xl justify-center items-center text-8xl font-bold"
+      className="w-1/2 h-1/2 mt-6 bg-white flex rounded-xl justify-center items-center text-8xl font-bold"
       onClick={() => (playingTo == 0 || isNaN(playingTo)) ? toggleModal() : increaseScore()}
 
     >
