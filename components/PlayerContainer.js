@@ -44,14 +44,13 @@ export default function PlayerContainer({ resetCounter, playingTo, wonReset }) {
   }
 
   return (
-    <div className="h-3/4 w-auto bg-amber-200 rounded-md flex flex-col items-center">
+    <div className="h-auto w-auto bg-amber-200 rounded-md flex flex-col items-center">
     <input
       type="text"
       value = {name}
-      className="bg-transparent border-none w-full text-center mt-4 placeholder-black"
+      className="bg-transparent border-none w-full text-center mt-4 placeholder-black placeholder-opacity-100 focus:placeholder-opacity-0 "
       placeholder = "Enter your name here"
       onChange={handleChangeName}
-
     />
     <button
       className="w-1/2 h-1/2 mt-6 bg-white flex rounded-xl justify-center items-center text-8xl font-bold"
