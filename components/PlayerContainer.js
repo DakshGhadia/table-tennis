@@ -53,7 +53,7 @@ export default function PlayerContainer({ resetCounter, playingTo, wonReset }) {
       onChange={handleChangeName}
     />
     <button
-      className="w-1/2 h-1/2 mt-6 bg-white flex rounded-xl justify-center items-center text-8xl font-bold"
+      className="w-2/3 h-3/4 mt-6 bg-white flex rounded-xl justify-center items-center text-8xl font-bold"
       onClick={() => (playingTo == 0 || isNaN(playingTo)) ? toggleModal() : increaseScore()}
 
     >
