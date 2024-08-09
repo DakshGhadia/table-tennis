@@ -60,7 +60,7 @@ export default function PlayerContainer({ resetCounter, playingTo, wonReset }) {
       {score}
     </button>
     <div>
-      <button onClick={decreaseScore} className="mt-3 bg-blue-500 rounded-lg">
+      <button onClick={decreaseScore} className="mt-3 bg-blue-500 rounded-lg mb-2">
         <p className="text-3xl">↓</p>
       </button>
     </div>
