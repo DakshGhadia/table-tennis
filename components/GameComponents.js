@@ -64,7 +64,7 @@ export default function GameComponents(){
       setShowServiceChangeModal(true);
       setPointsSinceLastServiceChange(0); 
     }
-  }, [pointsSinceLastServiceChange, serviceChange]);
+  }, [pointsSinceLastServiceChange, serviceChange,player1Score,player2Score,playingTo,winBy2]);
 
     return (
       <> 
