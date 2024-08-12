@@ -43,7 +43,7 @@ export default function CustomizationModal({
 
             <input
               type="number"
-              className="bg-gray-200 w-1/6 text-center border text-black border-gray-600 rounded-lg py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+              className="bg-gray-200 w-auto text-center border text-black border-gray-600 rounded-lg py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
               min='1'
               max={Number(playingTo)-1}
               value={serviceChangeValue}

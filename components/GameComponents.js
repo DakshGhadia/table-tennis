@@ -50,7 +50,7 @@ export default function GameComponents(){
   }
 
   useEffect(() => {
-    if(winBy2) {
+    if(winBy2 && serviceChange>0 && playingTo>0) {
       if(player1Score>=playingTo-1 && player2Score>=playingTo-1 && pointsSinceLastServiceChange==1 && Math.abs(player1Score-player2Score)<2) {
         setShowServiceChangeModal(true);
         setPointsSinceLastServiceChange(0); 
@@ -60,7 +60,7 @@ export default function GameComponents(){
         setPointsSinceLastServiceChange(0); 
       }
     }
-    else if (pointsSinceLastServiceChange >= serviceChange && (player1Score != playingTo && player2Score != playingTo)) {
+    else if (pointsSinceLastServiceChange >= serviceChange && (player1Score != playingTo && player2Score != playingTo && serviceChange>0 && playingTo>0)) {
       setShowServiceChangeModal(true);
       setPointsSinceLastServiceChange(0); 
     }
