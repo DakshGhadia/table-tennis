@@ -23,7 +23,7 @@ export default function CustomizationModal({
       <div className="fixed inset-0 flex items-center justify-center z-50">
         <div className="bg-white w-auto p-6 rounded-lg shadow-lg">
           <p className="mb-4 text-center text-lg font-semibold">Customize</p>
-          <div className="flex justify-center gap-x-4 w-auto">
+          <div className="flex justify-center items-center gap-x-4 w-auto">
             <input
               type="checkbox"
               checked={isWinBy2}
