@@ -2,34 +2,45 @@
 import { useState, useEffect } from "react";
 import PlayingToNotSetModal from "./PlayingToNotSetModal";
 import WonModal from "./WonModal";
-export default function PlayerContainer({ resetCounter, playingTo, wonReset }) {
-  const [score, setScore] = useState(0);
+export default function PlayerContainer({ 
+  resetCounter, 
+  playingTo, 
+  wonReset, 
+  setPlayerName, 
+  winBy2, 
+  playerScore, 
+  increaseScore, 
+  decreaseScore, 
+  opponentScore }) {
+
   const [showModal, setShowModal] = useState(false);
   const [won,setWon] = useState(false);
   const [name,setName] = useState();
+
   useEffect(() => {
     setWon(false);
-    setScore(0);
   }, [resetCounter]);
 
-  function increaseScore() {
-    setScore((score) => score + 1);
-  }
 
   useEffect(() => {
-    if(Number(score)===Number(playingTo) && Number(score) != 0){
-      setWon(true);
+    let winConditionMet = false;
+    
+    if (winBy2) {
+        // Check if the player has won by 2 points
+        if (Number(playerScore) !== 0 && Number(playerScore) >= Number(playingTo) && (Number(playerScore) - Number(opponentScore)) >= 2) {
+            winConditionMet = true;
+        }
+    } else {
+        // Standard win condition
+        if (Number(playerScore) === Number(playingTo) && Number(playerScore) !== 0) {
+            winConditionMet = true;
+        }
     }
-  }, [score,playingTo]);
-
-  function decreaseScore() {
-    setScore((score) => {
-      if (score > 0) {
-        return score - 1;
-      }
-      return 0;
-    });
-  }
+    
+    if (winConditionMet) {
+        setWon(true);
+    }
+}, [playerScore, playingTo, opponentScore, winBy2]);
 
   function toggleModal() {
     setShowModal(true);
@@ -41,6 +52,7 @@ export default function PlayerContainer({ resetCounter, playingTo, wonReset }) {
 
   function handleChangeName(event){
     setName(event.target.value);
+    setPlayerName(event.target.value)
   }
 
   return (
@@ -57,7 +69,7 @@ export default function PlayerContainer({ resetCounter, playingTo, wonReset }) {
       onClick={() => (playingTo == 0 || isNaN(playingTo)) ? toggleModal() : increaseScore()}
 
     >
-      {score}
+      {playerScore}
     </button>
     <div>
       <button onClick={decreaseScore} className="mt-3 bg-blue-500 rounded-lg mb-2">

@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 export default function PlayingTo({ onChangeValue, resetCounter }) {
   const number = useRef();
-  const [value, setValue] = useState();
+  const [value, setValue] = useState(11);
 
   useEffect(() => {
     setValue(11);
@@ -31,7 +31,7 @@ export default function PlayingTo({ onChangeValue, resetCounter }) {
           onChange={handleChange}
           ref={number}
           type="number"
-          className="bg-gray-200 w-16 h-9 text-center border text-black border-gray-600 rounded-lg py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+          className="bg-gray-200 w-auto h-auto text-center border text-black border-gray-600 rounded-lg py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
           value={value}
           min='0'
           max='100'
