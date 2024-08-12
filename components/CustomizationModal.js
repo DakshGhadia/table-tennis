@@ -9,7 +9,7 @@ export default function CustomizationModal({
 
 
   function onChangeValue(e) {
-    setServiceChangeValue(Number(e.target.value));
+    setServiceChangeValue(Math.max(1,Number(e.target.value)));
   }
 
   function handleCheckboxChange(event) {
@@ -44,7 +44,7 @@ export default function CustomizationModal({
             <input
               type="number"
               className="bg-gray-200 w-auto text-center border text-black border-gray-600 rounded-lg py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-              min='1'
+              min={1}
               max={Number(playingTo)-1}
               value={serviceChangeValue}
               onChange={onChangeValue}
